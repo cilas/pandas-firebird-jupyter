@@ -1,0 +1,32 @@
+version: "3"
+services:
+  app:
+    build: .
+    image: app-firebird
+    volumes:
+      - "./:/usr/src/app"
+    ports:
+      - "8889:8888"
+    environment: 
+      - GRANT_SUDO=yes
+    networks:
+      - net_firebird
+
+  firebird:
+    image: jacobalberty/firebird:2.5-sc
+    ports:
+      - "3050:3050"
+    volumes:
+      - ./firebird-data:/firebird/data
+    environment:
+      - ISC_PASSWORD=masterkey
+      - FIREBIRD_DATABASE=database.fdb
+    networks:
+      - net_firebird
+
+networks:
+  net_firebird:
+    driver: bridge
+
+volumes:
+  firebird-data:
