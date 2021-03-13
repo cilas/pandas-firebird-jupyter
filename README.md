@@ -3,7 +3,7 @@ _É preciso ter instalado na sua maquina o docker e o docker-compose._
 
 ## Clonando o repositório
 ```sh
-git clone https://github.com/cilas/python-firebird
+git clone https://github.com/cilas/pandas-firebird-jupyterrd
 cd python-firebird
 ```
 ## Subindo os containers
