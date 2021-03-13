@@ -4,7 +4,7 @@ services:
     build: .
     image: app-firebird
     volumes:
-      - "./:/usr/src/app"
+      - "./:/home/jovyan"
     ports:
       - "8889:8888"
     environment: 
